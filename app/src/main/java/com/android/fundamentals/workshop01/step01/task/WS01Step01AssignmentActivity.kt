@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatTextView
 import com.android.fundamentals.R
+import com.android.fundamentals.workshop01.step01.done.WS01Step01SolutionActivity
 
 class WS01Step01AssignmentActivity : AppCompatActivity() {
 
@@ -55,11 +56,13 @@ class WS01Step01AssignmentActivity : AppCompatActivity() {
     // Update text value on screen.
 
     override fun onSaveInstanceState(outState: Bundle) {
+        Log.d(TAG, "${LOG_PREFIX}::onSaveInstanceState")
         super.onSaveInstanceState(outState)
         outState.putInt(KEY_COUNT_ARGUMENT, counter)
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        Log.d(TAG, "${LOG_PREFIX}::onRestoreInstanceState")
         super.onRestoreInstanceState(savedInstanceState)
         counter = savedInstanceState.getInt(KEY_COUNT_ARGUMENT)
         tvValue?.text = "The value is: $counter"
